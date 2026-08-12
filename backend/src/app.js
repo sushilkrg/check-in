@@ -8,6 +8,7 @@ import interviewRoutes from './routes/interviewRoutes.js';
 import meetingRoutes from './routes/businessMeetingRoutes.js';
 import employeeRoutes from './routes/employeeRoutes.js';
 import authRoutes from './routes/authRoutes.js';
+import healthRoute from './routes/healthRoute.js';
 import errorHandler from './middleware/errorHandler.js';
 
 const app = express();
@@ -37,6 +38,7 @@ app.get('/api/health', (req, res) =>
   res.json({ success: true, message: 'Visitor Check-In API is running' }),
 );
 
+app.use("/api/health", healthRoute);
 app.use('/api/interviews', interviewRoutes);
 app.use('/api/business-meetings', meetingRoutes);
 app.use('/api/employees', employeeRoutes);
