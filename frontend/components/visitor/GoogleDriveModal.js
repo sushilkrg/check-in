@@ -1,2 +1,30 @@
-'use client';import {X,Cloud} from 'lucide-react';
-export default function GoogleDriveModal({open,onClose}){if(!open)return null;return <div className="fixed inset-0 z-50 bg-black/40 flex items-center justify-center p-4"><div className="bg-white rounded-2xl w-full max-w-sm p-6 shadow-2xl relative"><button onClick={onClose} className="absolute top-4 right-4 text-slate-400"><X/></button><div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 mb-4"><Cloud/></div><h3 className="font-bold text-lg">Google Drive Upload</h3><p className="text-sm text-slate-500 mt-2">This feature is not implemented yet.</p><p className="text-sm text-slate-500">Please upload your resume from your device.</p><button onClick={onClose} className="orange-btn w-full mt-5">Close</button></div></div>}
+"use client";
+import { X, Cloud } from "lucide-react";
+export default function GoogleDriveModal({ open, onClose }) {
+  if (!open) return null;
+  return (
+    <div className="fixed inset-0 z-50 bg-black/40 flex items-center justify-center p-4">
+      <div className="bg-white rounded-2xl w-full max-w-sm p-6 shadow-2xl relative">
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-slate-400"
+        >
+          <X />
+        </button>
+        <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 mb-4">
+          <Cloud />
+        </div>
+        <h3 className="font-bold text-lg">Google Drive Upload</h3>
+        <p className="text-sm text-slate-500 mt-2">
+          This feature is not implemented yet.
+        </p>
+        <p className="text-sm text-slate-500">
+          Please upload your resume from your device.
+        </p>
+        <button onClick={onClose} className="orange-btn w-full mt-5">
+          Close
+        </button>
+      </div>
+    </div>
+  );
+}
