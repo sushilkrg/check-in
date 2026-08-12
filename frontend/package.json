@@ -1,0 +1,19 @@
+{
+  "name": "visitor-checkin-frontend",
+  "private": true,
+  "scripts": {"dev":"next dev","build":"next build","start":"next start","lint":"next lint"},
+  "dependencies": {
+    "@hookform/resolvers":"^5.2.1",
+    "axios":"^1.11.0",
+    "lucide-react":"^0.468.0",
+    "next":"^15.4.6",
+    "qrcode.react":"^4.2.0",
+    "react":"^19.1.1",
+    "react-dom":"^19.1.1",
+    "react-hook-form":"^7.62.0",
+    "react-hot-toast":"^2.6.0",
+    "react-webcam":"^7.2.0",
+    "zod":"^4.0.17"
+  },
+  "devDependencies":{"@tailwindcss/postcss":"^4.1.12","tailwindcss":"^4.1.12"}
+}
