@@ -141,64 +141,106 @@ export default function InterviewForm() {
           </Field>
         </div>
       </section>
-      <section className="section-card">
+
+      <section className="section-card w-full">
         <h2 className="section-title">Professional Details</h2>
-        <div className="grid grid-cols-2 gap-3 grid-mobile-1">
-          <div className="col-span-2">
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+          {/* Position Applied For */}
+          <div className="sm:col-span-2 min-w-0">
             <Field
               label="Position Applied For"
               required
               error={errors.positionAppliedFor}
             >
-              <select className="field" {...register("positionAppliedFor")}>
+              <select
+                className="field w-full"
+                {...register("positionAppliedFor")}
+              >
                 <option value="">Select Position Applied For</option>
+
                 {POSITIONS.map((x) => (
-                  <option key={x}>{x}</option>
+                  <option key={x} value={x}>
+                    {x}
+                  </option>
                 ))}
               </select>
             </Field>
           </div>
-          <Field label="Select Source" required error={errors.source}>
-            <select className="field" {...register("source")}>
-              <option value="">Select Source</option>
-              {SOURCES.map((x) => (
-                <option key={x}>{x}</option>
-              ))}
-            </select>
-          </Field>
-          <Field label="Current Company Name">
-            <input
-              className="field"
-              placeholder="Current Company Name"
-              {...register("currentCompanyName")}
-            />
-          </Field>
-          <Field label="Company Type">
-            <select className="field" {...register("companyType")}>
-              <option value="">Company Type</option>
-              {COMPANY_TYPES.map((x) => (
-                <option key={x}>{x}</option>
-              ))}
-            </select>
-          </Field>
-          <Field label="Total Experience">
-            <input
-              className="field"
-              placeholder="e.g. 2.1, 3.5, 7.5"
-              {...register("totalExperience")}
-            />
-          </Field>
-          <Field label="Relevant Experience">
-            <input
-              className="field"
-              placeholder="e.g. 1.2, 2.8, 4.3"
-              {...register("relevantExperience")}
-            />
-          </Field>
-          <div className="col-span-2">
+
+          {/* Select Source */}
+          <div className="min-w-0">
+            <Field label="Select Source" required error={errors.source}>
+              <select className="field w-full" {...register("source")}>
+                <option value="">Select Source</option>
+
+                {SOURCES.map((x) => (
+                  <option key={x} value={x}>
+                    {x}
+                  </option>
+                ))}
+              </select>
+            </Field>
+          </div>
+
+          {/* Current Company */}
+          <div className="min-w-0">
+            <Field label="Current Company Name">
+              <input
+                type="text"
+                className="field w-full"
+                placeholder="Current Company Name"
+                {...register("currentCompanyName")}
+              />
+            </Field>
+          </div>
+
+          {/* Company Type */}
+          <div className="min-w-0">
+            <Field label="Company Type">
+              <select className="field w-full" {...register("companyType")}>
+                <option value="">Company Type</option>
+
+                {COMPANY_TYPES.map((x) => (
+                  <option key={x} value={x}>
+                    {x}
+                  </option>
+                ))}
+              </select>
+            </Field>
+          </div>
+
+          {/* Total Experience */}
+          <div className="min-w-0">
+            <Field label="Total Experience">
+              <input
+                type="text"
+                inputMode="decimal"
+                className="field w-full"
+                placeholder="e.g. 2.1, 3.5, 7.5"
+                {...register("totalExperience")}
+              />
+            </Field>
+          </div>
+
+          {/* Relevant Experience */}
+          <div className="min-w-0">
+            <Field label="Relevant Experience">
+              <input
+                type="text"
+                inputMode="decimal"
+                className="field w-full"
+                placeholder="e.g. 1.2, 2.8, 4.3"
+                {...register("relevantExperience")}
+              />
+            </Field>
+          </div>
+
+          {/* Reason for Job Change */}
+          <div className="sm:col-span-2 min-w-0">
             <Field label="Reason for Job Change">
               <textarea
-                className="field min-h-24"
+                className="field w-full min-h-24 resize-none"
                 placeholder="Reason for Job Change"
                 {...register("reasonForChange")}
               />
@@ -206,6 +248,7 @@ export default function InterviewForm() {
           </div>
         </div>
       </section>
+
       <section className="section-card">
         <h2 className="section-title">Skills & AI</h2>
         <div className="space-y-4">

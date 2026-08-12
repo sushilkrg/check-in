@@ -1,2 +1,26 @@
-'use client';import Brand from '../../../components/visitor/Brand';import BrandFooter from '../../../components/visitor/BrandFooter';import InterviewForm from '../../../components/visitor/InterviewForm';import Link from 'next/link';
-export default function Interview(){return <main className="min-h-screen py-4"><div className="container-card max-w-3xl"><Brand/><div className="mt-7"><InterviewForm/></div><BrandFooter/><div className="text-center mt-3"><Link href="/visit" className="text-xs text-slate-400 hover:text-purple-700">← Back to purpose</Link></div></div></main>}
+"use client";
+import Brand from "../../../components/visitor/Brand";
+import BrandFooter from "../../../components/visitor/BrandFooter";
+import InterviewForm from "../../../components/visitor/InterviewForm";
+import Link from "next/link";
+export default function Interview() {
+  return (
+    <main className="min-h-screen py-4">
+      <div className="container-card max-w-3xl">
+        <Brand />
+        <div className="mt-7">
+          <InterviewForm />
+        </div>
+        <BrandFooter />
+        <div className="text-center mt-3">
+          <Link
+            href="/visit"
+            className="text-xs text-slate-400 hover:text-purple-700"
+          >
+            ← Back to purpose
+          </Link>
+        </div>
+      </div>
+    </main>
+  );
+}
