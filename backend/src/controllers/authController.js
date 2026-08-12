@@ -31,7 +31,12 @@ const me = (req, res) =>
   res.json({ success: true, data: { email: req.admin.email } });
 
 const logout = (req, res) => {
-  res.clearCookie("admin_token");
+  res.clearCookie("admin_token", {
+    httpOnly: true,
+    secure: true,
+    sameSite: "none",
+    path: "/",
+  });
   return res.json({ success: true });
 };
 
